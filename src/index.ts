@@ -5,10 +5,13 @@ import mongoose from "mongoose";
 import userRouter from "./routes/user";
 import authorizationTest from "./routes/authorizationTest";
 
+import cors from "cors";
+
 dotenv.config();
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/user", userRouter);
